@@ -4,7 +4,7 @@ const fs = require('fs');
 
 //GET home route
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send('Team GOAT HTTPS server');
 });
 
 // we will pass our 'app' to 'https' server
@@ -13,4 +13,6 @@ https.createServer({
     cert: fs.readFileSync('./cert.pem'),
     passphrase: 'cisco'
 }, app)
-.listen(3000);
+.listen(3000, () => {
+  console.log("Server running on https://127.0.0.1:3000");
+});
